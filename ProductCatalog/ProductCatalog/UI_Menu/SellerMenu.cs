@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProductCatalog.Models
+namespace ProductCatalog.UI_Menu
 {
-    class CRM
+    class SellerManager
     {
     }
 }

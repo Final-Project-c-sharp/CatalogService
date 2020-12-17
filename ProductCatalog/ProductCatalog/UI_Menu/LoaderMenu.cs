@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProductCatalog.UI_Menu
 {
-    class ClientMenu
+    class LoaderMenu
     {
     }
 }
