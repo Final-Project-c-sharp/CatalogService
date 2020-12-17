@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LIgnbU99e1ddN+KLo3qp3uMPt7Rkk+nIdAsz1cFEQDRQhQgqlj+pZOsETv0oQIVYjhV4vtrJNP2DyoMlFeWATA==",
+  "dgSpecHash": "Opf1alJg4d+4LUBFwRRr3OW4GN0mDms/bbgZyGno9sL0segpaAg83V6XscDSciM6iGb3/MVWPFC8+yiiSXPPxA==",
   "success": true,
-  "projectFilePath": "D:\\Programming\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj",
+  "projectFilePath": "D:\\Programming\\TeamProjects\\CatalogService\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

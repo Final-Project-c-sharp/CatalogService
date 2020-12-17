@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProductCatalog.Managers
+namespace ProductCatalog.GroupsModels
 {
-    class CRMManager
+    class Seller
     {
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Programming\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj": {}
+    "D:\\Programming\\TeamProjects\\CatalogService\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj": {}
   },
   "projects": {
-    "D:\\Programming\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj": {
+    "D:\\Programming\\TeamProjects\\CatalogService\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Programming\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj",
+        "projectUniqueName": "D:\\Programming\\TeamProjects\\CatalogService\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj",
         "projectName": "ProductCatalog",
-        "projectPath": "D:\\Programming\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj",
+        "projectPath": "D:\\Programming\\TeamProjects\\CatalogService\\ProductCatalog\\ProductCatalog\\ProductCatalog.csproj",
         "packagesPath": "C:\\Users\\Даня\\.nuget\\packages\\",
-        "outputPath": "D:\\Programming\\ProductCatalog\\ProductCatalog\\obj\\",
+        "outputPath": "D:\\Programming\\TeamProjects\\CatalogService\\ProductCatalog\\ProductCatalog\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

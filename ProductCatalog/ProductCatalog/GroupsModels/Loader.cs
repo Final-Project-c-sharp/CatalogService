@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ProductCatalog.GroupsModels
 {
-    class Basket
+    class Loader
     {
     }
 }
