@@ -5,16 +5,18 @@ using System.Runtime.Serialization;
 namespace ProductCatalog.Models
 {
     [DataContract]
-    public class Manager
+    public class Employee
     {
         [DataMember]
         public string Name { get; set; }
         [DataMember]
         public string SurName { get; set; }
         [DataMember]
-        public string PhoneNumber { get; set; }
-        [DataMember]
         public int Age { get; set; }
+        [DataMember]
+        public string Position { get; set; }
+        [DataMember]
+        public string PhoneNumber { get; set; }
         [DataMember]
         public float Salary { get; set; }
         [DataMember]
@@ -23,9 +25,10 @@ namespace ProductCatalog.Models
         public string Password { get; set; }
         [DataMember]
         public int SecurityLvl { get; set; }
+
         public override string ToString()
         {
-            return $" {Name} {SurName} -> Age: {Age}, Phone: {PhoneNumber}, Salary: {Salary}$";
+            return $" {Name} {SurName} -> Age: {Age}, Position: {Position}, Phone: {PhoneNumber}, Salary: {Salary}$";
         }
     }
 }

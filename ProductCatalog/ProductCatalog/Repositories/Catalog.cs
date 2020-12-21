@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using ProductCatalog.Models;
+using System.Runtime.Serialization;
 namespace ProductCatalog.Repositories
 {
-    class Catalog
+    [DataContract]
+    public class Catalog
     {
-        List<Product> catalog { get; set; } = new List<Product>();
+        [DataMember]
+        public List<Product> Products { get; set; } = new List<Product>();
         public void Display()
         {
             Console.WriteLine("\n\t Product Catalog");
