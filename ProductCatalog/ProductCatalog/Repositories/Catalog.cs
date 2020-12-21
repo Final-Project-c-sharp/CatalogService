@@ -14,9 +14,9 @@ namespace ProductCatalog.Repositories
         {
             Console.WriteLine("\n\t Product Catalog");
             Console.WriteLine("=================================");
-            if (catalog.Count != 0)
+            if (Products.Count != 0)
             {
-                foreach (Product p in catalog)
+                foreach (Product p in Products)
                     Console.WriteLine(p);
             }
             else
