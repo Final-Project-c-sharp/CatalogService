@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Runtime.Serialization;
-namespace ProductCatalog.GroupsModels
+namespace ProductCatalog.Models
 {
     [DataContract]
-    class Manager
+    public class Manager
     {
         [DataMember]
         public string Name { get; set; }
-        [DataMember]
-        public int ID { get; set; }
         [DataMember]
         public string SurName { get; set; }
         [DataMember]
@@ -18,8 +16,16 @@ namespace ProductCatalog.GroupsModels
         [DataMember]
         public int Age { get; set; }
         [DataMember]
+        public float Salary { get; set; }
+        [DataMember]
         public string Login { get; set; }
         [DataMember]
         public string Password { get; set; }
+        [DataMember]
+        public int SecurityLvl { get; set; }
+        public override string ToString()
+        {
+            return $" {Name} {SurName} -> Age: {Age}, Phone: {PhoneNumber}, Salary: {Salary}$";
+        }
     }
 }
