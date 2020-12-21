@@ -5,12 +5,13 @@ using ProductCatalog.Repositories;
 using System.Runtime.Serialization.Json;
 using ProductCatalog.Models;
 using System.IO;
+
 namespace ProductCatalog.Managers
 {
     public class CatalogManager
     {
         public Catalog catalog { get; set; } = new Catalog();
-        string path = @"..\..\..\DataStorage\catalog.json";
+        string path = @"..\..\..\Data\catalog.json";
         DataContractJsonSerializer serializer = new DataContractJsonSerializer(typeof(Catalog));
         public void SaveData()
         {
