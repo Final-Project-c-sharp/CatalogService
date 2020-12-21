@@ -2,24 +2,33 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Runtime.Serialization;
-namespace ProductCatalog.GroupsModels
+namespace ProductCatalog.Models
 {
     [DataContract]
-    class Manager
+    public class Employee
     {
         [DataMember]
         public string Name { get; set; }
         [DataMember]
-        public int ID { get; set; }
-        [DataMember]
         public string SurName { get; set; }
+        [DataMember]
+        public int Age { get; set; }
+        [DataMember]
+        public string Position { get; set; }
         [DataMember]
         public string PhoneNumber { get; set; }
         [DataMember]
-        public int Age { get; set; }
+        public float Salary { get; set; }
         [DataMember]
         public string Login { get; set; }
         [DataMember]
         public string Password { get; set; }
+        [DataMember]
+        public int SecurityLvl { get; set; }
+
+        public override string ToString()
+        {
+            return $" {Name} {SurName} -> Age: {Age}, Position: {Position}, Phone: {PhoneNumber}, Salary: {Salary}$";
+        }
     }
 }
