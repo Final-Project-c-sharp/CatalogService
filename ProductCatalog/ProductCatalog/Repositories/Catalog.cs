@@ -13,8 +13,14 @@ namespace ProductCatalog.Repositories
         public void Display()
         {
             Console.WriteLine("\n\t Product Catalog");
-            Console.WriteLine("=================================");
-            if (Products.Count != 0)
+            Console.WriteLine("==================================================================");
+            //Console.WriteLine(Products.);
+            if (Products == null)
+            {
+                Console.WriteLine(" Here is any products! ");
+                
+            }
+            else if (Products.Count != 0)
             {
                 foreach (Product p in Products)
                     Console.WriteLine(p);
@@ -23,6 +29,7 @@ namespace ProductCatalog.Repositories
             {
                 Console.WriteLine(" Here is any products! ");
             }
+            Console.WriteLine("==================================================================");
         }
     }
 }

@@ -9,29 +9,61 @@ namespace ProductCatalog.UI_Menu
     {
         public EmployeesManager em = new EmployeesManager();
         public CatalogManager cm = new CatalogManager();
+
         public void AddNewProduct()
         {
-
+            Product p = new Product();
+            Console.Clear();
+            Console.WriteLine(" Input product name: ");
+            p.Name = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine(" Input product producer: ");
+            p.Producer = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine(" Input product price: ");
+            p.Price = float.Parse(Console.ReadLine());
+            Console.Clear();
+            Console.WriteLine(" Input product count in the storage: ");
+            p.Count = Int32.Parse(Console.ReadLine());
+            cm.AddNewProduct(p);
         }
 
         public void DeleteProduct()
         {
-
+            Console.Clear();
+            Console.WriteLine("Please input name: ");
+            string name = Console.ReadLine();
+            cm.DeleteProduct(name);
         }
 
         public void ChangeProduct()
         {
-
+            Console.Clear();
+            Console.WriteLine("Please input name: ");
+            string name = Console.ReadLine();
+            cm.ChangeProduct(name);
         }
 
         public void SellProduct()
         {
-
+            Console.Clear();
+            Console.WriteLine("Please input name: ");
+            string name = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Please input count: ");
+            int count = Int32.Parse(Console.ReadLine());
+            cm.SellProduct(name, count);
         }
 
         public void AddCountProduct()
         {
-
+            Console.Clear();
+            Console.WriteLine("Please input name: ");
+            string name = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Please input count: ");
+            int count = Int32.Parse(Console.ReadLine());
+            cm.AddCountProduct(name, count);
         }
 
         public void DisplayEmployees()
@@ -106,7 +138,7 @@ namespace ProductCatalog.UI_Menu
 
         public void DisplayProducts()
         {
-
+            cm.DisplayProducts();
         }
 
         public void DisplayUser()
