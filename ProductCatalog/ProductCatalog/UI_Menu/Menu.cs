@@ -20,7 +20,8 @@ namespace ProductCatalog.UI_Menu
                 Console.WriteLine("\n> Please input password: ");
                 string password = Console.ReadLine();
                 AccountManager am = new AccountManager();
-                int ver = am.Verify("", "");
+                int ver = am.Verify("", ""); // Проблема тут. Открой Аккаунт менеджер
+                
                 switch (ver)
                 {
                     case 0:

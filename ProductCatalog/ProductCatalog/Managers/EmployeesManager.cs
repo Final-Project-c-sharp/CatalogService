@@ -29,11 +29,13 @@ namespace ProductCatalog.Managers
             }
         }
         
-
+        public EmployeesManager()
+        {
+            LoadData();
+        }
 
         public void DisplayEmployees()
         {
-            LoadData();
             Console.Clear();
             company.Display();
             Console.WriteLine("\n> Press any key for continue....");
@@ -48,7 +50,6 @@ namespace ProductCatalog.Managers
 
         public void DelEmployee(string name, string surname)
         {
-            LoadData();
             int index = company.Employees.FindIndex(x => x.Name == name && x.SurName == surname);
             company.Employees.RemoveAt(index);
             SaveData();
@@ -56,7 +57,6 @@ namespace ProductCatalog.Managers
 
         public void ChangeEmployee(string name, string surname)
         {
-            LoadData();
             int index = company.Employees.FindIndex(x => x.Name == name && x.SurName == surname);
             if (index != -1)
             {

@@ -14,17 +14,16 @@ namespace ProductCatalog.Managers
         }
         public int Verify(string login, string password)
         {
-            //Employee res = (Employee)em.company.Employees.Where(l => l.Login == login && l.Password == password);
-
-            //if (res != null)
-            //{
-            //    return res.SecurityLvl;
-            //}
-            //else
-            //{
-            //    return 4;
-            //}
-            return 4;
+            Employee res = em.company.Employees.Single(l => l.Login == login && l.Password == password); //Where(l => l.Login == login && l.Password == password).Take(1);
+             // Вот в этой функции
+            if (true)
+            {
+                return res.SecurityLvl;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }

@@ -14,14 +14,19 @@ namespace ProductCatalog.Repositories
         {
             Console.WriteLine("\n\t Employees list");
             Console.WriteLine("==================================================================");
-            if (Employees.Count != 0)
+            if (Employees == null)
             {
-                foreach(Employee l in Employees)
-                    Console.WriteLine(l);
+                Console.WriteLine(" Here is any employees! ");
+
+            }
+            else if (Employees.Count != 0)
+            {
+                foreach (Employee e in Employees)
+                    Console.WriteLine(e);
             }
             else
             {
-                Console.WriteLine($" Here is any employees yet! ");
+                Console.WriteLine(" Here is any employees! ");
             }
             Console.WriteLine("==================================================================");
         }
