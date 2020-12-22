@@ -1,48 +1,103 @@
-{
+{  
   "Employees": [
     {
-      "Age": 1,
-      "Login": "1",
-      "Name": "1",
-      "Password": "1",
-      "PhoneNumber": "1",
-      "Position": "1",
-      "Salary": 1,
-      "SecurityLvl": 1,
-      "SurName": "1"
+      "Age": 1970,
+      "Login": "admin",
+      "Name": "Admin",
+      "Password": "qwerty",
+      "PhoneNumber": "666-66-666-66",
+      "Position": "Admin",
+      "Salary": 9999,
+      "SecurityLvl": 4,
+      "SurName": "Admin"
     },
     {
-      "Age": 2,
-      "Login": "2",
-      "Name": "2",
-      "Password": "2",
-      "PhoneNumber": "2",
-      "Position": "2",
-      "Salary": 2,
+      "Age": 32,
+      "Login": "natasha",
+      "Name": "Наташа",
+      "Password": "0283",
+      "PhoneNumber": "068-888-99-77",
+      "Position": "Продавец консультант",
+      "Salary": 500,
       "SecurityLvl": 2,
-      "SurName": "2"
+      "SurName": "Петрова"
     },
     {
-      "Age": 19,
-      "Login": "bober",
-      "Name": "Danya",
-      "Password": "1234",
-      "PhoneNumber": "0975700080",
+      "Age": 43,
+      "Login": "boris",
+      "Name": "Борис",
+      "Password": "2465",
+      "PhoneNumber": "097-50-632-32",
+      "Position": "Кассир",
+      "Salary": 400,
+      "SecurityLvl": 2,
+      "SurName": "Бритва"
+    },
+    {
+      "Age": 23,
+      "Login": "valera",
+      "Name": "Валера",
+      "Password": "6547",
+      "PhoneNumber": "067-89-56-789",
+      "Position": "Продавец-консультант",
+      "Salary": 450,
+      "SecurityLvl": 2,
+      "SurName": "Петров"
+    },
+    {
+      "Age": 43,
+      "Login": "chuvak",
+      "Name": "Большой",
+      "Password": "chuvak",
+      "PhoneNumber": "096-456-78-90",
       "Position": "Boss",
-      "Salary": 3000,
+      "Salary": 4000,
       "SecurityLvl": 4,
-      "SurName": "Boisan"
+      "SurName": "Лебовски"
     },
     {
-      "Age": 3,
-      "Login": "1234",
-      "Name": "3",
-      "Password": "1234",
-      "PhoneNumber": "3",
-      "Position": "3",
-      "Salary": 3,
+      "Age": 52,
+      "Login": "vasya",
+      "Name": "Вася",
+      "Password": "5478",
+      "PhoneNumber": "063-456-75-61",
+      "Position": "Грузчик",
+      "Salary": 200,
+      "SecurityLvl": 1,
+      "SurName": "Пупкин"
+    },
+    {
+      "Age": 33,
+      "Login": "ivan",
+      "Name": "Иван",
+      "Password": "1247",
+      "PhoneNumber": "094-84-984-56",
+      "Position": "Грузчик",
+      "Salary": 230,
+      "SecurityLvl": 1,
+      "SurName": "Иванов"
+    },
+    {
+      "Age": 40,
+      "Login": "pepega",
+      "Name": "Nikita",
+      "Password": "qwerty",
+      "PhoneNumber": "096-66-888-99",
+      "Position": "Менеджер по работе с клиентами",
+      "Salary": 300,
+      "SecurityLvl": 3,
+      "SurName": "Structura"
+    },
+    {
+      "Age": 123,
+      "Login": "Test",
+      "Name": "Test",
+      "Password": "Test",
+      "PhoneNumber": "123456789",
+      "Position": "Test",
+      "Salary": 123,
       "SecurityLvl": 4,
-      "SurName": "3"
+      "SurName": "Test"
     }
   ]
 }

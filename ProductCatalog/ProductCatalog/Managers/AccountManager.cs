@@ -28,9 +28,24 @@ namespace ProductCatalog.Managers
                 return res;
             }
             else
-            {                
+            {
                 return 0;
             }
         }
+
+        public string Name(string login)
+        {
+            Employee e = em.company.Employees.Single(x => x.Login == login);
+            return e.Name;
+        }
+
+        public void DisplayUser(string login)
+        {
+            Employee e = em.company.Employees.Single(x => x.Login == login);
+            Console.WriteLine(" =======================================================================================================================================================");
+            Console.WriteLine(e);
+            Console.WriteLine(" =======================================================================================================================================================");
+        }
+
     }
 }

@@ -44,8 +44,19 @@ namespace ProductCatalog.Managers
 
         public void AddEmployee(Employee emp)
         {
+            Console.Clear();
+            Console.WriteLine(" =======================================================================================================================================================");
+            Console.WriteLine(emp);
+            Console.WriteLine(" =======================================================================================================================================================");
+            Console.WriteLine("> Data Correct? Type 'n' for change date and 'y' for continue.          ");
+            Console.WriteLine("========================================================================");
             company.Employees.Add(emp);
             SaveData();
+
+            if(Char.Parse(Console.ReadLine()) == 'n')
+            {
+                ChangeEmployee(emp.Name, emp.SurName);
+            }
         }
 
         public void DelEmployee(string name, string surname)
@@ -61,8 +72,11 @@ namespace ProductCatalog.Managers
             if (index != -1)
             {
                 Console.Clear();
+                Console.WriteLine("========================================================================");
                 Console.WriteLine(" For skip press Enter. ");
+                Console.WriteLine("========================================================================");
                 Console.WriteLine($" Current name - {company.Employees[index].Name}");
+                Console.WriteLine("========================================================================");
                 Console.Write("> New Or skip: ");
                 string buff = Console.ReadLine();
                 if (buff != "")
@@ -71,7 +85,9 @@ namespace ProductCatalog.Managers
                 }
 
                 Console.Clear();
+                Console.WriteLine("========================================================================");
                 Console.WriteLine($" Current surname - {company.Employees[index].SurName}");
+                Console.WriteLine("========================================================================");
                 Console.Write("> New Or skip: ");
                 buff = Console.ReadLine();
                 if (buff != "")
@@ -80,7 +96,9 @@ namespace ProductCatalog.Managers
                 }
 
                 Console.Clear();
+                Console.WriteLine("========================================================================");
                 Console.WriteLine($" Current Age - {company.Employees[index].Age}");
+                Console.WriteLine("========================================================================");
                 Console.Write("> New Or skip: ");
                 buff = Console.ReadLine();
                 if (buff != "")
@@ -89,7 +107,9 @@ namespace ProductCatalog.Managers
                 }
 
                 Console.Clear();
+                Console.WriteLine("========================================================================");
                 Console.WriteLine($" Current Position - {company.Employees[index].Position}");
+                Console.WriteLine("========================================================================");
                 Console.Write("> New Or skip: ");
                 buff = Console.ReadLine();
                 if (buff != "")
@@ -98,7 +118,9 @@ namespace ProductCatalog.Managers
                 }
 
                 Console.Clear();
+                Console.WriteLine("========================================================================");
                 Console.WriteLine($" Current Phone Number- {company.Employees[index].PhoneNumber}");
+                Console.WriteLine("========================================================================");
                 Console.Write("> New Or skip: ");
                 buff = Console.ReadLine();
                 if (buff != "")
@@ -107,7 +129,9 @@ namespace ProductCatalog.Managers
                 }
 
                 Console.Clear();
+                Console.WriteLine("========================================================================");
                 Console.WriteLine($" Current Salary - {company.Employees[index].Salary}");
+                Console.WriteLine("========================================================================");
                 Console.Write("> New Or skip: ");
                 buff = Console.ReadLine();
                 if (buff != "")
@@ -116,7 +140,9 @@ namespace ProductCatalog.Managers
                 }
 
                 Console.Clear();
+                Console.WriteLine("========================================================================");
                 Console.WriteLine($" Current Login - {company.Employees[index].Login}");
+                Console.WriteLine("========================================================================");
                 Console.Write("> New Or skip: ");
                 buff = Console.ReadLine();
                 if (buff != "")
@@ -125,7 +151,9 @@ namespace ProductCatalog.Managers
                 }
 
                 Console.Clear();
+                Console.WriteLine("========================================================================");
                 Console.WriteLine($" Current Password - {company.Employees[index].Password}");
+                Console.WriteLine("========================================================================");
                 Console.Write("> New Or skip: ");
                 buff = Console.ReadLine();
                 if (buff != "")
@@ -134,17 +162,31 @@ namespace ProductCatalog.Managers
                 }
 
                 Console.Clear();
+                Console.WriteLine("========================================================================");
                 Console.WriteLine($" Current Security Level - {company.Employees[index].SecurityLvl}");
+                Console.WriteLine("========================================================================");
                 Console.Write("> New Or skip: ");
                 buff = Console.ReadLine();
                 if (buff != "")
                 {
                     company.Employees[index].SecurityLvl = Int32.Parse(buff);
                 }
-
+                Console.Clear();
+                Console.WriteLine(" =======================================================================================================================================================");
+                Console.WriteLine(company.Employees[index]);
+                Console.WriteLine(" =======================================================================================================================================================");
+                Console.WriteLine("> Data Correct? Type 'n' for change date and 'y' for continue.          ");
+                Console.WriteLine("========================================================================");
                 SaveData();
-                Console.WriteLine("> Press any key for continue...");
-                Console.ReadKey();
+                if (Char.Parse(Console.ReadLine()) == 'n')
+                {
+                    ChangeEmployee(company.Employees[index].Name, company.Employees[index].SurName);
+                }
+                else
+                {
+                    Console.WriteLine("> Press any key for continue...");
+                    Console.ReadKey();
+                }
             }
             else
             {

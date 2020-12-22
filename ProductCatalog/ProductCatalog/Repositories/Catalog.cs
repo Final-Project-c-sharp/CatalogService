@@ -12,9 +12,11 @@ namespace ProductCatalog.Repositories
         public List<Product> Products { get; set; } = new List<Product>();
         public void Display()
         {
-            Console.WriteLine("\n\t Product Catalog");
             Console.WriteLine("==================================================================");
-            //Console.WriteLine(Products.);
+            Console.WriteLine("|                        Product Catalog                         |");
+            Console.WriteLine("==================================================================");
+            Console.WriteLine($"| {"Name",15} | {"Producer",20} | {"Price",10}$ | {"Count",7} |");
+            Console.WriteLine("==================================================================");
             if (Products == null)
             {
                 Console.WriteLine(" Here is any products! ");
@@ -23,13 +25,15 @@ namespace ProductCatalog.Repositories
             else if (Products.Count != 0)
             {
                 foreach (Product p in Products)
+                {
                     Console.WriteLine(p);
+                    Console.WriteLine(" -----------------------------------------------------------------");
+                }
             }
             else
             {
                 Console.WriteLine(" Here is any products! ");
             }
-            Console.WriteLine("==================================================================");
         }
     }
 }
