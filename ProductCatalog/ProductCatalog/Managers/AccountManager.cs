@@ -14,16 +14,38 @@ namespace ProductCatalog.Managers
         }
         public int Verify(string login, string password)
         {
-            Employee res = em.company.Employees.Single(l => l.Login == login && l.Password == password); //Where(l => l.Login == login && l.Password == password).Take(1);
-             // Вот в этой функции
-            if (true)
+            int res = 0;
+            foreach (Employee e in em.company.Employees)
             {
-                return res.SecurityLvl;
+                if (e.Login == login && e.Password == password)
+                {
+                    res = e.SecurityLvl;
+                    break;
+                }
+            }
+            if (res != 0)
+            {
+                return res;
             }
             else
             {
                 return 0;
             }
         }
+
+        public string Name(string login)
+        {
+            Employee e = em.company.Employees.Single(x => x.Login == login);
+            return e.Name;
+        }
+
+        public void DisplayUser(string login)
+        {
+            Employee e = em.company.Employees.Single(x => x.Login == login);
+            Console.WriteLine(" =======================================================================================================================================================");
+            Console.WriteLine(e);
+            Console.WriteLine(" =======================================================================================================================================================");
+        }
+
     }
 }

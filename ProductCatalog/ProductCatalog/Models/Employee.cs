@@ -28,7 +28,9 @@ namespace ProductCatalog.Models
 
         public override string ToString()
         {
-            return $" {Name} {SurName} -> Age: {Age}, Position: {Position}, Phone: {PhoneNumber}, Salary: {Salary}$";
+            return $" | {Name,10} | {SurName,10} | {Age,10} | {Position,33} | {PhoneNumber,15} | {Salary,10} | {Login,10} | {Password,10} | {SecurityLvl,15} |";
+
+
         }
     }
 }

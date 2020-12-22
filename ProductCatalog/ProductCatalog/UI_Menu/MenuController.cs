@@ -14,15 +14,19 @@ namespace ProductCatalog.UI_Menu
         {
             Product p = new Product();
             Console.Clear();
+            Console.WriteLine("========================================================================");
             Console.WriteLine(" Input product name: ");
             p.Name = Console.ReadLine();
             Console.Clear();
+            Console.WriteLine("========================================================================");
             Console.WriteLine(" Input product producer: ");
             p.Producer = Console.ReadLine();
             Console.Clear();
+            Console.WriteLine("========================================================================");
             Console.WriteLine(" Input product price: ");
             p.Price = float.Parse(Console.ReadLine());
             Console.Clear();
+            Console.WriteLine("========================================================================");
             Console.WriteLine(" Input product count in the storage: ");
             p.Count = Int32.Parse(Console.ReadLine());
             cm.AddNewProduct(p);
@@ -31,6 +35,7 @@ namespace ProductCatalog.UI_Menu
         public void DeleteProduct()
         {
             Console.Clear();
+            Console.WriteLine("========================================================================");
             Console.WriteLine("Please input name: ");
             string name = Console.ReadLine();
             cm.DeleteProduct(name);
@@ -39,6 +44,7 @@ namespace ProductCatalog.UI_Menu
         public void ChangeProduct()
         {
             Console.Clear();
+            Console.WriteLine("========================================================================");
             Console.WriteLine("Please input name: ");
             string name = Console.ReadLine();
             cm.ChangeProduct(name);
@@ -47,9 +53,11 @@ namespace ProductCatalog.UI_Menu
         public void SellProduct()
         {
             Console.Clear();
+            Console.WriteLine("========================================================================");
             Console.WriteLine("Please input name: ");
             string name = Console.ReadLine();
             Console.Clear();
+            Console.WriteLine("========================================================================");
             Console.WriteLine("Please input count: ");
             int count = Int32.Parse(Console.ReadLine());
             cm.SellProduct(name, count);
@@ -58,9 +66,11 @@ namespace ProductCatalog.UI_Menu
         public void AddCountProduct()
         {
             Console.Clear();
+            Console.WriteLine("========================================================================");
             Console.WriteLine("Please input name: ");
             string name = Console.ReadLine();
             Console.Clear();
+            Console.WriteLine("========================================================================");
             Console.WriteLine("Please input count: ");
             int count = Int32.Parse(Console.ReadLine());
             cm.AddCountProduct(name, count);
@@ -77,39 +87,48 @@ namespace ProductCatalog.UI_Menu
             Employee emp = new Employee();
 
             Console.Clear();
-            Console.WriteLine("\n> Input name: ");
+            Console.WriteLine("========================================================================");
+            Console.WriteLine("> Input name: ");
             emp.Name = Console.ReadLine();
 
             Console.Clear();
-            Console.WriteLine("\n> Input Surname: ");
+            Console.WriteLine("========================================================================");
+            Console.WriteLine("> Input Surname: ");
             emp.SurName = Console.ReadLine();
 
             Console.Clear();
-            Console.WriteLine("\n> Input age: ");
+            Console.WriteLine("========================================================================");
+            Console.WriteLine("> Input age: ");
             emp.Age = Int32.Parse(Console.ReadLine());
 
             Console.Clear();
-            Console.WriteLine("\n> Input position: ");
+            Console.WriteLine("========================================================================");
+            Console.WriteLine("> Input position: ");
             emp.Position = Console.ReadLine();
 
             Console.Clear();
-            Console.WriteLine("\n> Input phone number: ");
+            Console.WriteLine("========================================================================");
+            Console.WriteLine("> Input phone number: ");
             emp.PhoneNumber = Console.ReadLine();
 
             Console.Clear();
-            Console.WriteLine("\n> Input salary: ");
+            Console.WriteLine("========================================================================");
+            Console.WriteLine("> Input salary: ");
             emp.Salary = float.Parse(Console.ReadLine());
 
             Console.Clear();
-            Console.WriteLine("\n> Input Login (for your account): ");
+            Console.WriteLine("========================================================================");
+            Console.WriteLine("> Input Login (for your account): ");
             emp.Login = Console.ReadLine();
 
             Console.Clear();
-            Console.WriteLine("\n> Input Password: ");
+            Console.WriteLine("========================================================================");
+            Console.WriteLine("> Input Password: ");
             emp.Password = Console.ReadLine();
 
             Console.Clear();
-            Console.WriteLine("\n> Input Security level( 1 - Loader, 2 - Seller, 3 - Manager, 4 - Admin/Boss): ");
+            Console.WriteLine("========================================================================");
+            Console.WriteLine("> Input Security level( 1 - Loader, 2 - Seller, 3 - Manager, 4 - Admin/Boss): ");
             emp.SecurityLvl = Int32.Parse(Console.ReadLine());
             em.AddEmployee(emp);
         }
@@ -117,9 +136,11 @@ namespace ProductCatalog.UI_Menu
         public void DelEmployee()
         {
             Console.Clear();
+            Console.WriteLine("========================================================================");
             Console.WriteLine("Please input name: ");
             string name = Console.ReadLine();
             Console.Clear();
+            Console.WriteLine("========================================================================");
             Console.WriteLine("Please input surname: ");
             string surname = Console.ReadLine();
             em.DelEmployee(name, surname);          
@@ -128,9 +149,11 @@ namespace ProductCatalog.UI_Menu
         public void ChangeEmployeeInfo()
         {
             Console.Clear();
+            Console.WriteLine("========================================================================");
             Console.WriteLine("Please input name: ");
             string name = Console.ReadLine();
             Console.Clear();
+            Console.WriteLine("========================================================================");
             Console.WriteLine("Please input surname: ");
             string surname = Console.ReadLine();
             em.ChangeEmployee(name, surname);
@@ -141,9 +164,12 @@ namespace ProductCatalog.UI_Menu
             cm.DisplayProducts();
         }
 
-        public void DisplayUser()
+        public void DisplayUser(AccountManager am, string login)
         {
-
+            Console.Clear();
+            am.DisplayUser(login);
+            Console.WriteLine("\n> Press enter for continue....");
+            Console.ReadKey();
         }
     }
 }

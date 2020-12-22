@@ -75,8 +75,11 @@ namespace ProductCatalog.Managers
             if (index != -1)
             {
                 Console.Clear();
+                Console.WriteLine("========================================================================");
                 Console.WriteLine(" For skip press Enter. ");
+                Console.WriteLine("========================================================================");
                 Console.WriteLine($" Current name - {catalog.Products[index].Name}");
+                Console.WriteLine("========================================================================");
                 Console.Write("> New Or skip: ");
                 string buff = Console.ReadLine();
                 if (buff != "")
@@ -85,7 +88,9 @@ namespace ProductCatalog.Managers
                 }
 
                 Console.Clear();
+                Console.WriteLine("========================================================================");
                 Console.WriteLine($" Current producer - {catalog.Products[index].Producer}");
+                Console.WriteLine("========================================================================");
                 Console.Write("> New Or skip: ");
                 buff = Console.ReadLine();
                 if (buff != "")
@@ -94,7 +99,9 @@ namespace ProductCatalog.Managers
                 }
 
                 Console.Clear();
+                Console.WriteLine("========================================================================");
                 Console.WriteLine($" Current price - {catalog.Products[index].Price}");
+                Console.WriteLine("========================================================================");
                 Console.Write("> New Or skip: ");
                 buff = Console.ReadLine();
                 if (buff != "")
@@ -103,19 +110,31 @@ namespace ProductCatalog.Managers
                 }
 
                 Console.Clear();
+                Console.WriteLine("========================================================================");
                 Console.WriteLine($" Current Position - {catalog.Products[index].Count}");
+                Console.WriteLine("========================================================================");
                 Console.Write("> New Or skip: ");
                 buff = Console.ReadLine();
                 if (buff != "")
                 {
                     catalog.Products[index].Count = Int32.Parse(buff);
                 }
-
-               
-
+                Console.Clear();
+                Console.WriteLine(" =======================================================================================================================================================");
+                Console.WriteLine(catalog.Products[index]);
+                Console.WriteLine(" =======================================================================================================================================================");
+                Console.WriteLine("> Data Correct? Type 'n' for change date and 'y' for continue.          ");
+                Console.WriteLine("========================================================================");
                 SaveData();
-                Console.WriteLine("> Press any key for continue...");
-                Console.ReadKey();
+                if (Char.Parse(Console.ReadLine()) == 'n')
+                {
+                    ChangeProduct(catalog.Products[index].Name);
+                }
+                else
+                {
+                    Console.WriteLine("> Press any key for continue...");
+                    Console.ReadKey();
+                }
             }
             else
             {

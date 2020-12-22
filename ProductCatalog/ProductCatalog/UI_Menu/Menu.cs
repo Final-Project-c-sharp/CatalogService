@@ -9,59 +9,81 @@ namespace ProductCatalog.UI_Menu
         char choice ='y';
         MenuController mc = new MenuController();
         public void DisplayMainMenu()
-        { 
+        {
+            bool accessFailed = false;
             while (choice == 'y')
-            {
+            {                
                 Console.Clear();
-                Console.WriteLine("\t\t Product Catalog Manager System. Version 1.0");
-                Console.WriteLine("\n");
+                Console.WriteLine("========================================================================");
+                Console.WriteLine("|             Product Catalog Manager System. Version 1.0              |");
+                Console.WriteLine("========================================================================");
+                Console.WriteLine("|             Log in to continue working!                              |");
+                if (accessFailed)
+                {
+                    Console.WriteLine("========================================================================");
+                    Console.WriteLine("\n => Login or password is uncorrect! <= \n");
+                }
+                Console.WriteLine("========================================================================");
                 Console.WriteLine("\n> Please input login: ");
                 string login = Console.ReadLine();
+                Console.WriteLine("========================================================================");
                 Console.WriteLine("\n> Please input password: ");
                 string password = Console.ReadLine();
+                Console.WriteLine("========================================================================");
                 AccountManager am = new AccountManager();
-                int ver = am.Verify("", ""); // Проблема тут. Открой Аккаунт менеджер
-                
+                int ver = am.Verify(login, password);
                 switch (ver)
                 {
                     case 0:
+                        accessFailed = true;
                         break;
                     case 1:
-                        LoaderMenu();
+                        LoaderMenu(login, am);
+                        accessFailed = false;
                         break;
                     case 2:
-                        SellerMenu();
+                        SellerMenu(login, am);
+                        accessFailed = false;
                         break;
                     case 3:
-                        ManagerMenu();
+                        ManagerMenu(login, am);
+                        accessFailed = false;
                         break;
                     case 4:
-                        Admin();
+                        Admin(login, am);
+                        accessFailed = false;
                         break;
                     default:
                         break;
                 }
-                Console.WriteLine("\n> Do you want continue? (y/n)");
-                choice = Char.Parse(Console.ReadLine());
-                
+                if (!accessFailed)
+                {
+                    Console.WriteLine("\n> Do you want continue? (y/n)");
+                    choice = Char.Parse(Console.ReadLine());                    
+                }
             }
         }
 
-        public void ManagerMenu()
+        public void ManagerMenu(string login, AccountManager am)
         {
             bool exit = true;
             while (exit)
             {
                 Console.Clear();
-                Console.WriteLine("\t Manager Menu ");
-                Console.WriteLine(" 1. Add new product");
-                Console.WriteLine(" 2. Change product ");
-                Console.WriteLine(" 3. Delete product ");
-                Console.WriteLine(" 4. Display Employees");
-                Console.WriteLine(" 5. Add new employee ");
-                Console.WriteLine(" 6. Delete employee ");
-                Console.WriteLine(" 7. Change employee");
-                Console.WriteLine(" 0. Log out");
+                Console.WriteLine(" =======================================================");
+                Console.WriteLine(" |                   Manager Menu                      |");
+                Console.WriteLine(" =======================================================");
+                Console.WriteLine($"    Welcome back, {am.Name(login)}!                ");
+                Console.WriteLine(" =======================================================");
+                Console.WriteLine(" |   1. Add new product                                |");
+                Console.WriteLine(" |   2. Change product                                 |");
+                Console.WriteLine(" |   3. Delete product                                 |");
+                Console.WriteLine(" |   4. Display Employees                              |");
+                Console.WriteLine(" |   5. Add new employee                               |");
+                Console.WriteLine(" |   6. Delete employee                                |");
+                Console.WriteLine(" |   7. Change employee                                |");
+                Console.WriteLine(" |   0. Log out                                        |");
+                Console.WriteLine(" =======================================================");
                 switch (GetAnswer())
                 {
                     case 0:
@@ -94,17 +116,21 @@ namespace ProductCatalog.UI_Menu
             }
         }
 
-        public void LoaderMenu()
+        public void LoaderMenu(string login, AccountManager am)
         {
             bool exit = true;
             while (exit)
             {
                 Console.Clear();
-                Console.WriteLine("\t Loader Menu ");
-                Console.WriteLine(" 1. Add product to the sklad ");
-                Console.WriteLine(" 2. Display products ");
-                Console.WriteLine(" 3. Display user info ");
-                Console.WriteLine(" 0. Log out");
+                Console.WriteLine(" =======================================================");
+                Console.WriteLine(" |                   Loader Menu                       |");
+                Console.WriteLine(" =======================================================");
+                Console.WriteLine(" |   1. Add product to the sklad                       |");
+                Console.WriteLine(" |   2. Display products                               |");
+                Console.WriteLine(" |   3. Display user info                              |");
+                Console.WriteLine(" |   0. Log out                                        |");
+                Console.WriteLine(" =======================================================");
+                Console.Write("\n> ");
                 switch (GetAnswer())
                 {
                     case 0:
@@ -117,7 +143,7 @@ namespace ProductCatalog.UI_Menu
                         mc.DisplayProducts();
                         break;
                     case 3:
-                        mc.DisplayUser();
+                        mc.DisplayUser(am, login);
                         break;
                     default:
                         break;
@@ -125,18 +151,22 @@ namespace ProductCatalog.UI_Menu
             }
         }
 
-        public void SellerMenu()
+        public void SellerMenu(string login, AccountManager am)
         {
             bool exit = true;
                 while (exit)
                 {
                     Console.Clear();
-                    Console.WriteLine("\t Loader Menu ");
-                    Console.WriteLine(" 1. Sell product ");
-                    Console.WriteLine(" 2. Change product ");
-                    Console.WriteLine(" 3. Display user info ");
-                    Console.WriteLine(" 0. Log out");
-                    switch (GetAnswer())
+                    Console.WriteLine(" =======================================================");
+                    Console.WriteLine(" |                   Sellert Menu                      |");
+                    Console.WriteLine(" =======================================================");
+                    Console.WriteLine(" |   1. Sell product                                   |");
+                    Console.WriteLine(" |   2. Change product                                 |");
+                    Console.WriteLine(" |   3. Display user info                              |");
+                    Console.WriteLine(" |   0. Log out                                        |");
+                    Console.WriteLine(" =======================================================");
+                    Console.Write("\n> ");
+                switch (GetAnswer())
                     {
                         case 0:
                             exit = false;
@@ -148,7 +178,7 @@ namespace ProductCatalog.UI_Menu
                         mc.ChangeProduct();
                             break;
                         case 3:
-                        mc.DisplayUser();
+                        mc.DisplayUser(am, login);
                             break;
                         default:
                             break;
@@ -156,24 +186,29 @@ namespace ProductCatalog.UI_Menu
                 }
         }
 
-        public void Admin()
+        public void Admin(string login, AccountManager am)
         {
             bool exit = true;
             while (exit)
             {
                 Console.Clear();
-                Console.WriteLine("\t Manager Menu ");
-                Console.WriteLine(" 1. Add new product");
-                Console.WriteLine(" 2. Change product ");
-                Console.WriteLine(" 3. Delete product ");
-                Console.WriteLine(" 4. Display Employees");
-                Console.WriteLine(" 5. Add new employee ");
-                Console.WriteLine(" 6. Delete employee ");
-                Console.WriteLine(" 7. Change employee");
-                Console.WriteLine(" 8. Sell product");
-                Console.WriteLine(" 9. Add product to the sklad ");
-                Console.WriteLine(" 10. Display products ");
-                Console.WriteLine(" 0. Log out");
+                
+                Console.WriteLine(" =======================================================");
+                Console.WriteLine(" |                   Admin Menu                        |");
+                Console.WriteLine(" =======================================================");
+                Console.WriteLine(" |   1. Add new product                                |");
+                Console.WriteLine(" |   2. Change product                                 |");
+                Console.WriteLine(" |   3. Delete product                                 |");
+                Console.WriteLine(" |   4. Display Employees                              |");
+                Console.WriteLine(" |   5. Add new employee                               |");
+                Console.WriteLine(" |   6. Delete employee                                |");
+                Console.WriteLine(" |   7. Change employee                                |");
+                Console.WriteLine(" |   8. Sell product                                   |");
+                Console.WriteLine(" |   9. Add product to storage                         |");
+                Console.WriteLine(" |   10. Display products                              |");
+                Console.WriteLine(" |   0. Log out                                        |");
+                Console.WriteLine(" =======================================================");
+                Console.Write("\n> ");
                 switch (GetAnswer())
                 {
                     case 0:

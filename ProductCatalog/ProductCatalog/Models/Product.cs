@@ -17,7 +17,7 @@ namespace ProductCatalog.Models
         public int Count { get; set; }
         public override string ToString()
         {
-            return $" {Name}  Producer: \"{Producer}\" -> {Price}$, count -> {Count} ";
+            return $"| {Name,15} | {Producer,20} | {Price, 10}$ | {Count, 7} |";
         }
 
     }
