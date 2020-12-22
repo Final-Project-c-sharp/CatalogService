@@ -9,41 +9,54 @@ namespace ProductCatalog.UI_Menu
         char choice ='y';
         MenuController mc = new MenuController();
         public void DisplayMainMenu()
-        { 
+        {
+            bool accessFailed = false;
             while (choice == 'y')
             {
+
+                
                 Console.Clear();
                 Console.WriteLine("\t\t Product Catalog Manager System. Version 1.0");
                 Console.WriteLine("\n");
+                if (accessFailed)
+                {
+                    Console.WriteLine(" Login or password is uncorrect!");
+                }
                 Console.WriteLine("\n> Please input login: ");
                 string login = Console.ReadLine();
                 Console.WriteLine("\n> Please input password: ");
                 string password = Console.ReadLine();
                 AccountManager am = new AccountManager();
-                int ver = am.Verify("", ""); // Проблема тут. Открой Аккаунт менеджер
-                
+                int ver = am.Verify(login, password);
                 switch (ver)
                 {
                     case 0:
+                        accessFailed = true;
                         break;
                     case 1:
                         LoaderMenu();
+                        accessFailed = false;
                         break;
                     case 2:
                         SellerMenu();
+                        accessFailed = false;
                         break;
                     case 3:
                         ManagerMenu();
+                        accessFailed = false;
                         break;
                     case 4:
                         Admin();
+                        accessFailed = false;
                         break;
                     default:
                         break;
                 }
-                Console.WriteLine("\n> Do you want continue? (y/n)");
-                choice = Char.Parse(Console.ReadLine());
-                
+                if (!accessFailed)
+                {
+                    Console.WriteLine("\n> Do you want continue? (y/n)");
+                    choice = Char.Parse(Console.ReadLine());                    
+                }
             }
         }
 
@@ -171,7 +184,7 @@ namespace ProductCatalog.UI_Menu
                 Console.WriteLine(" 6. Delete employee ");
                 Console.WriteLine(" 7. Change employee");
                 Console.WriteLine(" 8. Sell product");
-                Console.WriteLine(" 9. Add product to the sklad ");
+                Console.WriteLine(" 9. Add product to storage ");
                 Console.WriteLine(" 10. Display products ");
                 Console.WriteLine(" 0. Log out");
                 switch (GetAnswer())

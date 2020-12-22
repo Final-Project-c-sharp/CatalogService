@@ -1,1 +1,48 @@
-{"Employees":[{"Age":1,"Login":"1","Name":"1","Password":"1","PhoneNumber":"1","Position":"1","Salary":1,"SecurityLvl":1,"SurName":"1"},{"Age":2,"Login":"2","Name":"2","Password":"2","PhoneNumber":"2","Position":"2","Salary":2,"SecurityLvl":2,"SurName":"2"}]}
+{
+  "Employees": [
+    {
+      "Age": 1,
+      "Login": "1",
+      "Name": "1",
+      "Password": "1",
+      "PhoneNumber": "1",
+      "Position": "1",
+      "Salary": 1,
+      "SecurityLvl": 1,
+      "SurName": "1"
+    },
+    {
+      "Age": 2,
+      "Login": "2",
+      "Name": "2",
+      "Password": "2",
+      "PhoneNumber": "2",
+      "Position": "2",
+      "Salary": 2,
+      "SecurityLvl": 2,
+      "SurName": "2"
+    },
+    {
+      "Age": 19,
+      "Login": "bober",
+      "Name": "Danya",
+      "Password": "1234",
+      "PhoneNumber": "0975700080",
+      "Position": "Boss",
+      "Salary": 3000,
+      "SecurityLvl": 4,
+      "SurName": "Boisan"
+    },
+    {
+      "Age": 3,
+      "Login": "1234",
+      "Name": "3",
+      "Password": "1234",
+      "PhoneNumber": "3",
+      "Position": "3",
+      "Salary": 3,
+      "SecurityLvl": 4,
+      "SurName": "3"
+    }
+  ]
+}
