@@ -1,15 +1,15 @@
-{  
+{
   "Employees": [
     {
       "Age": 1970,
       "Login": "admin",
-      "Name": "Admin",
+      "Name": "Daniil",
       "Password": "qwerty",
       "PhoneNumber": "666-66-666-66",
       "Position": "Admin",
       "Salary": 9999,
       "SecurityLvl": 4,
-      "SurName": "Admin"
+      "SurName": "Boisan"
     },
     {
       "Age": 32,

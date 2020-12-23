@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using ProductCatalog.Managers;
 using ProductCatalog.Models;
+using ProductCatalog.Exceptions;
 namespace ProductCatalog.UI_Menu
 {
     class MenuController
@@ -24,7 +25,10 @@ namespace ProductCatalog.UI_Menu
             Console.Clear();
             Console.WriteLine("========================================================================");
             Console.WriteLine(" Input product price: ");
-            p.Price = float.Parse(Console.ReadLine());
+            if (!float.TryParse(Console.ReadLine(), out float price))
+                throw new BadInputException("Wrong input!");
+            else
+                p.Price = price;
             Console.Clear();
             Console.WriteLine("========================================================================");
             Console.WriteLine(" Input product count in the storage: ");
@@ -59,8 +63,7 @@ namespace ProductCatalog.UI_Menu
             Console.Clear();
             Console.WriteLine("========================================================================");
             Console.WriteLine("Please input count: ");
-            int count = Int32.Parse(Console.ReadLine());
-            cm.SellProduct(name, count);
+            int count = Int32.Parse(Console.ReadLine());                        
         }
 
         public void AddCountProduct()
@@ -170,6 +173,6 @@ namespace ProductCatalog.UI_Menu
             am.DisplayUser(login);
             Console.WriteLine("\n> Press enter for continue....");
             Console.ReadKey();
-        }
+        }        
     }
 }
