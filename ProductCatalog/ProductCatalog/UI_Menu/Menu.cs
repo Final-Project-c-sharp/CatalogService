@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using ProductCatalog.Managers;
+using ProductCatalog.Exceptions;
 namespace ProductCatalog.UI_Menu
 {
     class Menu
@@ -125,6 +126,8 @@ namespace ProductCatalog.UI_Menu
                 Console.WriteLine(" =======================================================");
                 Console.WriteLine(" |                   Loader Menu                       |");
                 Console.WriteLine(" =======================================================");
+                Console.WriteLine($"    Welcome back, {am.Name(login)}!                ");
+                Console.WriteLine(" =======================================================");
                 Console.WriteLine(" |   1. Add product to the sklad                       |");
                 Console.WriteLine(" |   2. Display products                               |");
                 Console.WriteLine(" |   3. Display user info                              |");
@@ -158,11 +161,14 @@ namespace ProductCatalog.UI_Menu
                 {
                     Console.Clear();
                     Console.WriteLine(" =======================================================");
-                    Console.WriteLine(" |                   Sellert Menu                      |");
+                    Console.WriteLine(" |                   Seller Menu                       |");
+                    Console.WriteLine(" =======================================================");
+                    Console.WriteLine($"    Welcome back, {am.Name(login)}!                    ");
                     Console.WriteLine(" =======================================================");
                     Console.WriteLine(" |   1. Sell product                                   |");
                     Console.WriteLine(" |   2. Change product                                 |");
                     Console.WriteLine(" |   3. Display user info                              |");
+                    Console.WriteLine(" |   4. Display products                              |");
                     Console.WriteLine(" |   0. Log out                                        |");
                     Console.WriteLine(" =======================================================");
                     Console.Write("\n> ");
@@ -180,7 +186,10 @@ namespace ProductCatalog.UI_Menu
                         case 3:
                         mc.DisplayUser(am, login);
                             break;
-                        default:
+                        case 4:
+                        mc.DisplayProducts();
+                            break;
+                    default:
                             break;
                     }
                 }
@@ -195,6 +204,8 @@ namespace ProductCatalog.UI_Menu
                 
                 Console.WriteLine(" =======================================================");
                 Console.WriteLine(" |                   Admin Menu                        |");
+                Console.WriteLine(" =======================================================");
+                Console.WriteLine($"    Welcome back, {am.Name(login)}!                    ");
                 Console.WriteLine(" =======================================================");
                 Console.WriteLine(" |   1. Add new product                                |");
                 Console.WriteLine(" |   2. Change product                                 |");
@@ -253,7 +264,13 @@ namespace ProductCatalog.UI_Menu
 
         private int GetAnswer()
         {
-            return Int32.Parse(Console.ReadLine());
+            if (!Int32.TryParse(Console.ReadLine(), out int a))
+                throw new BadInputException("Wrong symbol!");
+            else
+            {
+                return a;
+            }
         }
+        
     }
 }
