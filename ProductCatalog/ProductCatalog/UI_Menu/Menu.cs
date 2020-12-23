@@ -60,7 +60,11 @@ namespace ProductCatalog.UI_Menu
                 if (!accessFailed)
                 {
                     Console.WriteLine("\n> Do you want continue? (y/n)");
-                    choice = Char.Parse(Console.ReadLine());                    
+                    if (!Char.TryParse(Console.ReadLine(), out char c))
+                        throw new BadInputException("Wrong input!");
+                    else
+                        choice = c;                    
+
                 }
             }
         }
@@ -266,10 +270,8 @@ namespace ProductCatalog.UI_Menu
         {
             if (!Int32.TryParse(Console.ReadLine(), out int a))
                 throw new BadInputException("Wrong symbol!");
-            else
-            {
-                return a;
-            }
+            else            
+                return a;            
         }
         
     }

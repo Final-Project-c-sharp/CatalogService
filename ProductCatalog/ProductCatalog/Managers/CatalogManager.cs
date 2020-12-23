@@ -115,7 +115,7 @@ namespace ProductCatalog.Managers
                 Console.WriteLine("========================================================================");
                 Console.Write("> New Or skip: ");
                 buff = Console.ReadLine();
-                if (buff != "")
+                if (buff != "" && Int32.TryParse(buff, out int count))
                 {
                     catalog.Products[index].Count = Int32.Parse(buff);
                 }

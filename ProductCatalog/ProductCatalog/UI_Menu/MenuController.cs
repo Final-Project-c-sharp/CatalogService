@@ -32,7 +32,10 @@ namespace ProductCatalog.UI_Menu
             Console.Clear();
             Console.WriteLine("========================================================================");
             Console.WriteLine(" Input product count in the storage: ");
-            p.Count = Int32.Parse(Console.ReadLine());
+            if(!Int32.TryParse(Console.ReadLine(), out int count))
+                throw new BadInputException("Wrong input!");
+                    else
+                p.Count = count;
             cm.AddNewProduct(p);
         }
 
@@ -63,7 +66,9 @@ namespace ProductCatalog.UI_Menu
             Console.Clear();
             Console.WriteLine("========================================================================");
             Console.WriteLine("Please input count: ");
-            int count = Int32.Parse(Console.ReadLine());                        
+            if (!Int32.TryParse(Console.ReadLine(), out int count))
+                throw new BadInputException("Wrong input!");            
+            cm.SellProduct(name, count);
         }
 
         public void AddCountProduct()
@@ -75,7 +80,8 @@ namespace ProductCatalog.UI_Menu
             Console.Clear();
             Console.WriteLine("========================================================================");
             Console.WriteLine("Please input count: ");
-            int count = Int32.Parse(Console.ReadLine());
+            if (!Int32.TryParse(Console.ReadLine(), out int count))
+                throw new BadInputException("Wrong input!");
             cm.AddCountProduct(name, count);
         }
 
@@ -101,9 +107,11 @@ namespace ProductCatalog.UI_Menu
 
             Console.Clear();
             Console.WriteLine("========================================================================");
-            Console.WriteLine("> Input age: ");
-            emp.Age = Int32.Parse(Console.ReadLine());
-
+            Console.WriteLine("> Input age: ");            
+            if (!Int32.TryParse(Console.ReadLine(), out int age))
+                throw new BadInputException("Wrong input!");
+            else
+                emp.Age = age;
             Console.Clear();
             Console.WriteLine("========================================================================");
             Console.WriteLine("> Input position: ");
@@ -117,8 +125,10 @@ namespace ProductCatalog.UI_Menu
             Console.Clear();
             Console.WriteLine("========================================================================");
             Console.WriteLine("> Input salary: ");
-            emp.Salary = float.Parse(Console.ReadLine());
-
+            if (!float.TryParse(Console.ReadLine(), out float salary))
+                throw new BadInputException("Wrong input!");
+            else
+                emp.Salary = salary;
             Console.Clear();
             Console.WriteLine("========================================================================");
             Console.WriteLine("> Input Login (for your account): ");
@@ -133,6 +143,10 @@ namespace ProductCatalog.UI_Menu
             Console.WriteLine("========================================================================");
             Console.WriteLine("> Input Security level( 1 - Loader, 2 - Seller, 3 - Manager, 4 - Admin/Boss): ");
             emp.SecurityLvl = Int32.Parse(Console.ReadLine());
+            if (!Int32.TryParse(Console.ReadLine(), out int sl))
+                throw new BadInputException("Wrong input!");
+            else
+                emp.SecurityLvl = sl;
             em.AddEmployee(emp);
         }
 
